@@ -6,7 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/EurekaServer/EurekaServer.iml" filepath="$PROJECT_DIR$/EurekaServer/EurekaServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/Feign/Feign.iml" filepath="$PROJECT_DIR$/Feign/Feign.iml" />
       <module fileurl="file://$PROJECT_DIR$/Ribbon/Ribbon.iml" filepath="$PROJECT_DIR$/Ribbon/Ribbon.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringCloud.iml" filepath="$PROJECT_DIR$/SpringCloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WuliCloud.iml" filepath="$PROJECT_DIR$/WuliCloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/Zuul/Zuul.iml" filepath="$PROJECT_DIR$/Zuul/Zuul.iml" />
     </modules>
   </component>

@@ -15,7 +15,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>SpringCloud</name>
+    <name>WuliCloud</name>
     <description>Wulis project for Spring Cloud</description>
 
     <modules>

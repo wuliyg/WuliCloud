@@ -58,6 +58,7 @@
       <module name="Feign" target="1.8" />
       <module name="Ribbon" target="1.8" />
       <module name="SpringCloud" target="1.8" />
+      <module name="WuliCloud" target="1.8" />
       <module name="Zuul" target="1.8" />
     </bytecodeTargetLevel>
   </component>

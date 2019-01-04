@@ -21,6 +21,9 @@
     <modules>
         <module>EurekaServer</module>
         <module>EurekaClient</module>
+        <module>ConfigClientBus</module>
+        <module>ConfigServer</module>
+        <module>ConfigClient</module>
         <module>Feign</module>
         <module>Ribbon</module>
         <module>Zuul</module>

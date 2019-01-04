@@ -1,6 +1,10 @@
 server:
   port: 8761
 
+spring:
+  application:
+    name: EurekaServer
+
 eureka:
   instance:
     hostname: localhost
@@ -9,7 +13,3 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-
-spring:
-  application:
-    name: EurekaServer

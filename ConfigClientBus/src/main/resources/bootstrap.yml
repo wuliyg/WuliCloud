@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: ConfigClientBus
+  cloud:
+    config:
+      label: master
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: ConfigServer

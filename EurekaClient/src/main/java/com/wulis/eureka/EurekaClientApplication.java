@@ -23,7 +23,8 @@ public class EurekaClientApplication {
     @ResponseBody
     @RequestMapping(value = "eureka/client")
     public String eurekaClient() {
-        return "I am from port:" + port;
+        System.out.println("请求eurekaClient");
+        return "I am EurekaClient from port:" + port;
     }
 }
 

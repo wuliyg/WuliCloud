@@ -15,6 +15,15 @@ zuul:
     ribbon:
       path: /Ribbon/**
       serviceId: Ribbon
+
     feign:
       path: /Feign/**
       serviceId: Feign
+
+    zipkin-a:
+      path: /Zipkin-a/**
+      serviceId: Zipkin-a
+
+    zipkin-b:
+      path: /Zipkin-b/**
+      serviceId: Zipkin-b

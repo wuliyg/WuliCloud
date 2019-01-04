@@ -26,6 +26,8 @@
         <module>ConfigClient</module>
         <module>Feign</module>
         <module>Ribbon</module>
+        <module>Zipkin-a</module>
+        <module>Zipkin-b</module>
         <module>Zuul</module>
     </modules>
 

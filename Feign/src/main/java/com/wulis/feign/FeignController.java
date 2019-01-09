@@ -16,6 +16,6 @@ public class FeignController {
     @ResponseBody
     @RequestMapping("feign")
     public String feign() {
-        return eurekaClient.eurekaClient();
+        return eurekaClient.getFoo();
     }
 }

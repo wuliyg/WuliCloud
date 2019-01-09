@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @FeignClient(value = "EurekaClient", fallback = EurekaClientImpl.class)
 public interface EurekaClient {
-    @RequestMapping(value = "eureka/client")
-    String eurekaClient();
+    @RequestMapping(value = "getFoo")
+    String getFoo();
 }

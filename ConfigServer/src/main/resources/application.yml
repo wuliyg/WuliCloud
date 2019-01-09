@@ -1,9 +1,34 @@
-server:
-  port: 8770
-
 spring:
   application:
     name: ConfigServer
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: wulibao
+    password: caidao
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka.server.a:9000/eureka,http://eureka.server.b:9001/eureka,http://eureka.server.c:9002/eureka
+---
+#读取github上配置文件
+server:
+  port: 9005
+spring:
+  profiles: git
   cloud:
     config:
       server:
@@ -11,8 +36,14 @@ spring:
           uri: https://github.com/ChengbaoWen/WuliCloud/
           search-paths: Config-Server
       label: master
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+---
+server:
+  port: 9006
+#读取本地配置文件
+spring:
+  profiles: native #读取本地配置文件必须有此项，且必须为native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config

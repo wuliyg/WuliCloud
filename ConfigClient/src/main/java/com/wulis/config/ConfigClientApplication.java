@@ -12,11 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ConfigClientApplication {
 
-    @Value("${config}")
-    String config;
-    @RequestMapping(value = "/getConfig")
-    public String getConfig(){
-        return config;
+    @Value("${foo}")
+    String foo;
+
+    @RequestMapping(value = "getFoo")
+    public String getFoo() {
+        return foo;
     }
 
     public static void main(String[] args) {

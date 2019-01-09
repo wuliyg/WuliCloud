@@ -1,15 +1,45 @@
-server:
-  port: 8761
-
 spring:
   application:
     name: EurekaServer
-
+---
+#eureka服务器a配置
+spring:
+  profiles: eureka-server-a
+server:
+  port: 9000
 eureka:
   instance:
-    hostname: localhost
+    hostname: eureka.server.a
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: false    #是否注册到Eureka服务中
+    fetchRegistry: true         #是否读取Eureka服务中的注册信息
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://eureka.server.b:9001/eureka,http://eureka.server.c:9002/eureka
+---
+#eureka服务器b配置
+spring:
+  profiles: eureka-server-b
+server:
+  port: 9001
+eureka:
+  instance:
+    hostname: eureka.server.b
+  client:
+    registerWithEureka: false    #是否注册到Eureka服务中
+    fetchRegistry: true         #是否读取Eureka服务中的注册信息
+    serviceUrl:
+      defaultZone: http://eureka.server.a:9000/eureka,http://eureka.server.c:9002/eureka
+---
+#eureka服务器c配置
+spring:
+  profiles: eureka-server-c
+server:
+  port: 9002
+eureka:
+  instance:
+    hostname: eureka.server.c
+  client:
+    registerWithEureka: false    #是否注册到Eureka服务中
+    fetchRegistry: true         #是否读取Eureka服务中的注册信息
+    serviceUrl:
+      defaultZone: http://eureka.server.a:9000/eureka,http://eureka.server.b:9001/eureka

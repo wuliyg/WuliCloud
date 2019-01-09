@@ -1,30 +1,23 @@
 server:
-  port: 8774
+  port: ${server.port}
 
 spring:
-  application:
-    name: ConfigClientBus
   cloud:
     bus:
-      enabled: true
+      enabled: ${spring.cloud.bus.enabled}
       trace:
-        enabled: true
+        enabled: ${spring.cloud.bus.trace.enabled}
   rabbitmq:
-    host: localhost
-    port: 5672
-    username: wulibao
-    password: caidao
+    host: ${spring.rabbitmq.host}
+    port: ${spring.rabbitmq.port}
+    username: ${spring.rabbitmq.username}
+    password: ${spring.rabbitmq.password}
 
 management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: ${management.endpoints.web.exposure.include}
       cors:
-        allowed-origins: "*"
-        allowed-methods: "*"
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+        allowed-origins: ${management.endpoints.web.cors.allowed-origins}
+        allowed-methods: ${management.endpoints.web.cors.allowed-methods}

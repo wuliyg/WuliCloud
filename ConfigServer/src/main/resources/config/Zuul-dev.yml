@@ -1,0 +1,54 @@
+foo: Zuul-dev.v10
+server:
+  port: 9017
+
+spring:
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: wulibao
+    password: caidao
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+
+zuul:
+  routes:
+    configClient:
+      path: /ConfigClient/**
+      serviceId: ConfigClient
+
+    configClientBus:
+      path: /ConfigClientBus/**
+      serviceId: ConfigClientBus
+
+    eurekaClient:
+      path: /EurekaClient/**
+      serviceId: EurekaClient
+
+    ribbon:
+      path: /Ribbon/**
+      serviceId: Ribbon
+
+    feign:
+      path: /Feign/**
+      serviceId: Feign
+
+    zipkinA:
+      path: /ZipkinA/**
+      serviceId: ZipkinA
+
+    zipkinB:
+      path: /ZipkinB/**
+      serviceId: ZipkinB

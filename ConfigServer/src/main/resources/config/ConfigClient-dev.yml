@@ -1,0 +1,3 @@
+foo: ConfigClient-dev.v10
+server:
+  port: 9010

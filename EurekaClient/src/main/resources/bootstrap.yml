@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: EurekaClient
+  cloud:
+    config:
+      label: master
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: ConfigServer
+#eureka必须配置在bootstrap中
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka.server.a:9000/eureka,http://eureka.server.b:9001/eureka,http://eureka.server.c:9002/eureka

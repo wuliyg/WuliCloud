@@ -1,17 +1,41 @@
 server:
-  port: 8769
+  port: ${server.port}
 
 spring:
-  application:
-    name: Zuul
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: wulibao
+    password: caidao
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
 
 zuul:
   routes:
+    configClient:
+      path: /ConfigClient/**
+      serviceId: ConfigClient
+
+    configClientBus:
+      path: /ConfigClientBus/**
+      serviceId: ConfigClientBus
+
+    eurekaClient:
+      path: /EurekaClient/**
+      serviceId: EurekaClient
+
     ribbon:
       path: /Ribbon/**
       serviceId: Ribbon
@@ -20,10 +44,10 @@ zuul:
       path: /Feign/**
       serviceId: Feign
 
-    zipkin-a:
-      path: /Zipkin-a/**
-      serviceId: Zipkin-a
+    zipkinA:
+      path: /ZipkinA/**
+      serviceId: ZipkinA
 
-    zipkin-b:
-      path: /Zipkin-b/**
-      serviceId: Zipkin-b
+    zipkinB:
+      path: /ZipkinB/**
+      serviceId: ZipkinB

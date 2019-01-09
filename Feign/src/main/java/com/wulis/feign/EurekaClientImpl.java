@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class EurekaClientImpl implements EurekaClient {
     @Override
-    public String eurekaClient() {
+    public String getFoo() {
         return "EurekaClient Error!";
     }
 }

@@ -34,7 +34,7 @@ spring:
       server:
         git:
           uri: https://github.com/ChengbaoWen/WuliCloud/
-          search-paths: Config-Server
+          search-paths: ConfigServerGitHub/config
       label: master
 ---
 server:

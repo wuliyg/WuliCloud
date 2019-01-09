@@ -1,0 +1,34 @@
+foo: ZipkinB-dev.v10
+server:
+  port: 9016
+
+spring:
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: wulibao
+    password: caidao
+
+  sleuth:
+    sampler:
+      probability: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
+  zipkin:
+    service:
+      name: ZipkinA
+    base-url: http://127.0.0.1:9411/ # 指定了 Zipkin 服务器的地址
+    sender:
+      type: web #rabbit
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"

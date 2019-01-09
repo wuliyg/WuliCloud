@@ -10,7 +10,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableEurekaClient
 @EnableFeignClients
 @SpringBootApplication
-@RefreshScope
 public class ZipkinAApplication {
 
     public static void main(String[] args) {

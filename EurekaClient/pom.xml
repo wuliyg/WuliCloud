@@ -5,13 +5,15 @@
 
     <parent>
         <groupId>com.wulis</groupId>
-        <artifactId>springcloud</artifactId>
+        <artifactId>WuliCloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <groupId>com.wulis</groupId>
-    <artifactId>eureka</artifactId>
+    <artifactId>EurekaClient</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
     <name>EurekaClient</name>
     <description>Eureka Client project for Spring Cloud</description>
 
